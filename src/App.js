@@ -17,10 +17,7 @@ const App = () => {
   }, []);
   console.log(bookShelves)
   
-//  useEffect(() => {
-//   setBookShelves(initialBooks)
 
-//  },[])
   // search functionality
   const [query, setQuery] = useState("");
  const [showingBooks, setShowingBooks] = useState([])
