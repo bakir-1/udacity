@@ -11,8 +11,8 @@ const Book = ({book, createBook}) => {
         style={{
           width: 128,
           height: 188,
-          backgroundImage:
-          `url(${book.imageLinks.thumbnail})`
+          background:
+          `url(${book.imageLinks.smallThumbnail})`
         }}
       ></div>
       <div className="book-shelf-changer">
@@ -31,10 +31,8 @@ const Book = ({book, createBook}) => {
     </div>
     <div className="book-title">{book.title}</div>
     {/* maping the authors so that the text dont overlap */}
-    <div className="book-authors">{(book.authors).map((author, index) => (
-      <div key={index} style={{'color':"grey"}}>{author}</div> 
-    ))}</div>
-  </div>
+    <div className="book-authors">{book.authors}</div> 
+    </div>
   )
 }
 export default Book
