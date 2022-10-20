@@ -2,7 +2,6 @@ import React from "react";
 
 const Book = ({book, createBook}) => {
   
-   console.log(typeof(createBook))
   return (
     <div className="book">
     <div className="book-top">
