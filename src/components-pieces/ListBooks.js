@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
 import Book from "./Book"
 const ListBooks=({showingBooks, setQuery, bookShelves, createBook, query}) => {
+ 
+  // const searchBook = showingBooks.filter((book)=> book.imageLinks)
+  // console.log(searchBook, "this is searches books")
    return (
     <div>
     <div className="search-books">
