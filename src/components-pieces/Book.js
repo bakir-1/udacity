@@ -1,22 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Book = ({book, createBook}) => {
   
+  //  const thumpnailBooks = book =() =>{
+  //   if (!book.imageLinks) {
+  //     const ahmed = book.filter((book) => book.imageLinks.smallThumbnail)
+  //     return ahmed
+  //   }
+  //   return
+  //  }
+
+  const allBooks = []
+  useEffect(() =>{
+    allBooks.push(book)
+
+  }, [book])
+
+  //  console.log(thumpnailBooks(), 'ahmed')
+  //  console.log(thumpnailBooks, 'BDELAS')
+   
   return (
     <div className="book">
     <div className="book-top">
+      
       <div
         className="book-cover"
         style={{
           width: 128,
           height: 188,
           background:
-          `url(${book.imageLinks.smallThumbnail})`
+          `url(${book.imageLinks?book.imageLinks.smallThumbnail: '' })`
         }}
       ></div>
       <div className="book-shelf-changer">
-        <select defaultValue={book.shelf} onChange={(e)=> createBook(book, e.target.value)} >
-          <option value="none" disabled>
+        <select defaultValue={book.shelf ? book.shelf: "none"} onChange={(e)=> createBook(book, e.target.value)} >
+          <option value="Move" disabled>
             Move to...
           </option>
           <option value="currentlyReading">
