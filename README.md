@@ -1,56 +1,68 @@
-Project Title
-One Paragraph of project description goes here
+# MyReads: A Book Tracking Web App
+MyReads web app is created using React.js as a part of the [Udacity's React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
 
-Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## About
+This is a single-page app (navigation happens without the need to refresh pages), and it represents a virtual bookcase to store your books and track what you're reading.
+MyReads lets you manage your digital bookshelf. It supports three shelves:
+- Currently Reading
+- Want to Read
+- Read
 
-Prerequisites
-What things you need to install the software and how to install them
+Additionally you can search and add books to any shelf. 
 
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
+### Live Demo: 
+[https://my-reads-8c75aa.netlify.com/](https://my-reads-8c75aa.netlify.com/)
 
-Say what the step will be
+-------
+## Development
+A static example of the CSS and HTML markup was provided, and a backend API to communicate with a Backend Server from Udacity for book information and long term storage.
+Then I added interactivity to the app by refactoring the static code into react components, following DOT (Do One Thing) rule.
 
-Give the example
-And repeat
+### Starter Code
+[https://github.com/udacity/reactnd-project-myreads-starter](https://github.com/udacity/reactnd-project-myreads-starter)
 
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+### Backend Server
 
-Running the tests
-Explain how to run the automated tests for this system
+The provided file [`BooksAPI.js`](src/BooksAPI.js) contains following methods to perform necessary operations on the backend:
 
-Break down into end to end tests
-Explain what these tests test and why
+* `getAll` To get all the books from the API
+* `update` Update shelf information of the book
+* `search` Search book in the database
 
-Give an example
-And coding style tests
-Explain what these tests test and why
 
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
+### Features I needed to add
 
-Built With
-Dropwizard - The web framework used
-Maven - Dependency Management
-ROME - Used to generate RSS Feeds
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+In terms of UI
+- The main page shows 3 shelves for books. Each book is shown on the correct shelf, along with its title and all of its authors.
+- The search page has a search input field. As the user types into the search field, books that match the query are displayed on the page.
+- The search works correctly when a book does not have a thumbnail or an author. (To test this, try searching for "poetry" and "biography").
+- each book (in the main page, or in the results of a search) has a control that allows users to move it between shelves. The control is tied to each book instance.
+- the shelf the book is in is reflected through its control on all pages
+- any changes in book shelves should be reflected on all pages.
+    ie. If a book's shelf is changed on the search page, then it should appear in the responding shelf on the main page.
 
-Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
+In terms of state
+- Component state is passed down from parent components to child components. The state variable is not modified directly - but by using setState() function.
+- Books have the same state on both the search page and the main application page: If a book is on a bookshelf, that is reflected in both locations.
 
-Authors
-Billie Thompson - Initial work - PurpleBooth
-See also the list of contributors who participated in this project.
+UI and URL are in sync
+- Done using react-router
 
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+---------
+## Screenshots
+![screenshot1](./public/imgs/screenshot1.png)
+![screenshot2](./public/imgs/screenshot2.png)
 
-Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc
+## Installation
+
+Clone the repository, change directories, and use NPM to install the dependencies.
+- Clone/Download this repo.
+- Run `npm install`or `yarn install` in the project directory to install dependencies.
+
+## Start
+- The project can be run with `npm start`
+- Then it can be viewed in the browser at [http://localhost:3000](http://localhost:3000)
+
+
+## Important
+The backend API is built by Udacity and **only a fixed set of search terms are supported.** Supported search terms can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the API.
