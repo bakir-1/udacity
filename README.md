@@ -10,16 +10,12 @@ MyReads lets you manage your digital bookshelf. It supports three shelves:
 
 Additionally you can search and add books to any shelf. 
 
-### Live Demo: 
-[https://my-reads-8c75aa.netlify.com/](https://my-reads-8c75aa.netlify.com/)
 
 -------
 ## Development
 A static example of the CSS and HTML markup was provided, and a backend API to communicate with a Backend Server from Udacity for book information and long term storage.
 Then I added interactivity to the app by refactoring the static code into react components, following DOT (Do One Thing) rule.
 
-### Starter Code
-[https://github.com/udacity/reactnd-project-myreads-starter](https://github.com/udacity/reactnd-project-myreads-starter)
 
 ### Backend Server
 
