@@ -13,7 +13,7 @@ const Main = ({bookShelves,createBook}) => {
       {/* search part */}
     </div>
     <div className="open-search">
-      <Link to="/list" ></Link>
+      <Link to="/search" ></Link>
     </div>
   </div>
   )
